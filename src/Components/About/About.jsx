@@ -4,7 +4,7 @@ import React from 'react'
 const About = () => {
     return (
         <div id='about-section'>
-            <div className='about-wrapper flex'>
+            <div className='about-wrapper flex flex-col-reverse lg:flex-row'>
                 <div className='bg-cyan-400 w-full p-12'>
                     <h2 className='text-3xl font-bold text-center mb-12'>About Me</h2>
                     <p className='leading-8'>Hey there! 🌟 I'm Arshil Amaan Ansari, your go-to web wizard hailing from Lucknow, India. 🇮🇳 Imagine a blend of curiosity 🧐, creativity 🎨, and caffeine-fueled coding sessions ☕️—that's my recipe for crafting digital magic! ✨
@@ -21,8 +21,8 @@ const About = () => {
 
                         Ready to dive into a world of innovation and collaboration? Let's connect and make some tech magic happen! 🌐✨</p>
                 </div>
-                <div className='bg-amber-200 h-screen w-full flex justify-center'>
-                    <img src={myImg} className='h-full' style={{
+                <div className='bg-amber-200 h-[10%] lg:h-fit lg:w-1/2 flex justify-center'>
+                    <img data-aos="zoom-in-up" src={myImg} className='h-[10%] lg:h-full' style={{
                         WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%)",
                         maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%)"
                     }} alt="portfolio-image" />

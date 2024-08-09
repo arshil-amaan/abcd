@@ -2,8 +2,8 @@ import React from 'react'
 
 const Projects = () => {
     return (
-        <div id='about-section'>
-            Projects
+        <div id='projects-section'>
+            
         </div>
     )
 }
