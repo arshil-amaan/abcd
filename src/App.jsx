@@ -4,8 +4,10 @@ import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
 // import Skills from './Components/Skills/Skills'
 import Skills from './Components/Skills/Skills2'
+// import Projects from './Components/Projects/Projects'
 import Projects from './Components/Projects/Projects'
 import Footer from './Components/Footer/Footer'
+import Projects2 from './Components/Projects2/Projects2'
 
 function App() {
   useEffect(() => {
@@ -24,7 +26,8 @@ function App() {
       <Skills />
 
       {/* Projects section */}
-      <Projects />
+      {/* <Projects /> */}
+      <Projects2 />
 
       {/* Footer section */}
       <Footer />

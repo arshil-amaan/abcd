@@ -15,18 +15,7 @@ const Hero = () => {
     return (
         <>
             <div className='h-screen flex justify-center flex-col items-center' id='hero-section'>
-                <ReactNebula config={{
-                    "starsCount": 0,
-                    "starsColor": "#f00",
-                    "starsRotationSpeed": 8.8,
-                    "cometFrequence": 28,
-                    "nebulasIntensity": 10,
-                    "bgColor": "rgb(8,8,8)",
-                    "sunScale": 2.5,
-                    "planetsScale": 2.7,
-                    "solarSystemOrbite": 82,
-                    "solarSystemSpeedOrbit": 70
-                }} />
+                <ReactNebula />
                 <div className='flex flex-col justify-center items-center z-10'>
                     <h1 className='text-7xl font-bold'>Arshil Amaan Ansari</h1>
                     <div className='flex text-2xl'>
