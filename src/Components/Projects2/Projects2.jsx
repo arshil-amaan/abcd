@@ -4,8 +4,8 @@ import './styles.css'
 
 const Projects2 = () => {
     return (
-        <div className="center">
-            <Slider data={data} activeSlide={0} />
+        <div id="projects-section" className="center">
+            <Slider data={data} activeSlide={2} />
         </div>
     )
 }

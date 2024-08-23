@@ -8,6 +8,7 @@ import Skills from './Components/Skills/Skills2'
 import Projects from './Components/Projects/Projects'
 import Footer from './Components/Footer/Footer'
 import Projects2 from './Components/Projects2/Projects2'
+import Contact from './Components/Contact/Contact'
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,9 @@ function App() {
       {/* Projects section */}
       {/* <Projects /> */}
       <Projects2 />
+
+      {/* Footer section */}
+      <Contact />
 
       {/* Footer section */}
       <Footer />

@@ -1,12 +1,12 @@
 import React from 'react'
 import style from './Button.module.css'
 
-const Button = (props) => {
+const Button = ({to,goto}) => {
 
     let sv;
     let title;
 
-    if (props.to === "github") {
+    if (to === "github") {
         title = "View on Github"
         sv = (
             <svg
@@ -22,7 +22,7 @@ const Button = (props) => {
                 ></path>
             </svg>
         );
-    } else if (props.to === "site") {
+    } else if (to === "site") {
         title = "Visit Site"
         sv = (<svg width="10" className="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 15">
             <path fill="currentColor" d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"></path>
@@ -31,10 +31,10 @@ const Button = (props) => {
 
 
     return (
-        <button className={style["btn-github"]}>
+        <a href={goto} target="_blank" rel="noopener noreferrer" className={style["btn-github"]}>
             {sv}
             <span>{title}</span>
-        </button>
+        </a >
 
     )
 }

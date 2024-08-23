@@ -1,14 +1,6 @@
-import TextSnippet from '@mui/icons-material/TextSnippet';
-import GitHub from '@mui/icons-material/GitHub';
-import LinkedIn from '@mui/icons-material/LinkedIn';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import Email from '@mui/icons-material/Email';
 import React from 'react'
 import { ReactNebula } from "@flodlc/nebula";
-
-import '../../App.css'
-
-const TEXTS = ['Full Stack', 'Java', 'MERN'];
 
 const Hero = () => {
 
@@ -19,17 +11,21 @@ const Hero = () => {
                 <div className='flex flex-col justify-center items-center z-10'>
                     <h1 className='text-7xl font-bold'>Arshil Amaan Ansari</h1>
                     <div className='flex text-2xl'>
-                        <p>I'm a Developer</p>
+                        <p className='leading-loose'>I'm a Developer</p>
                     </div>
-                    <div className="hero-icons">
-                        <TextSnippet />
-                        <GitHub />
-                        <LinkedIn />
-                        <Email />
-                    </div>
-                    <div className="hero-links flex">
-                        <p>About</p>
-                        <p>Projects</p>
+                    <div className="hero-links flex leading-loose">
+                        <a
+                        href='#about-section'
+                            className='text-xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
+                        >
+                            About
+                        </a>
+                        <a
+                        href='#projects-section'
+                            className='text-xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
+                        >
+                            Projects
+                        </a>
                     </div>
                 </div>
 

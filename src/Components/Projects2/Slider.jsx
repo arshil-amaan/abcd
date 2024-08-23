@@ -102,11 +102,10 @@ export default (props) => {
     );
 };
 
-const SliderContent = (props) => {
-    console.log(props)
+const SliderContent = ({projImg, description, title, ghLink, demoLink}) => {
     return (
         <div className="sliderContent">
-            <ProjectCard projImg={props.projImg} description={props.description} />
+            <ProjectCard projImg={projImg} description={description} title={title} ghLink={ghLink} demoLink={demoLink} />
         </div>
     );
 };
