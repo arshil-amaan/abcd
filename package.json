@@ -10,12 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.0",
+    "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@flodlc/nebula": "^1.0.56",
     "@mui/icons-material": "^5.16.7",
     "aos": "^2.3.4",
     "react": "^18.3.1",
+    "react-awesome-reveal": "^4.2.14",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
     "swiper": "^11.1.9"
