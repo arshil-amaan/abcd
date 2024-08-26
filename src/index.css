@@ -24,3 +24,20 @@ body{
   margin: 0;
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #e0f7fa; /* Light cyan background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fde68a; /* Amber color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffc107; /* Darker amber on hover */
+}

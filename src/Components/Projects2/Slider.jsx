@@ -6,8 +6,7 @@ import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRound
 export default (props) => {
     const [activeSlide, setactiveSlide] = useState(props.activeSlide);
 
-    const next = () =>
-        activeSlide < props.data.length - 1 && setactiveSlide(activeSlide + 1);
+    const next = () => activeSlide < props.data.length - 1 && setactiveSlide(activeSlide + 1);
 
     const prev = () => activeSlide > 0 && setactiveSlide(activeSlide - 1);
 
@@ -84,7 +83,7 @@ export default (props) => {
             </div>
             {/* carousel */}
 
-            <div className="btns">
+            <div className="btns flex justify-center">
                 <div
                     className="btn"
                     onClick={prev}
@@ -102,7 +101,7 @@ export default (props) => {
     );
 };
 
-const SliderContent = ({projImg, description, title, ghLink, demoLink}) => {
+const SliderContent = ({ projImg, description, title, ghLink, demoLink }) => {
     return (
         <div className="sliderContent">
             <ProjectCard projImg={projImg} description={description} title={title} ghLink={ghLink} demoLink={demoLink} />

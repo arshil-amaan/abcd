@@ -39,12 +39,10 @@ const SkillCard = (props) => {
   );
 
   return (
-    <div className={style["tooltip"]}>
-      <div>
-        <div className='w-fit flex items-center justify-center m-[10px] px-20 py-3 bg-slate-100 rounded-md hover:shadow-none shadow-[0_0_4px_#38bdf8]'>
-          <img width="70px" src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${tech}/${tech2}.svg`} />
+    <div className={`${style["tooltip"]} `}>
+        <div className='w-fit flex items-center justify-center m-[10px] px-8 md:px-16 py-2 bg-slate-100 rounded-md hover:shadow-none shadow-[0_0_4px_#38bdf8]'>
+          <img className='w-[40px] md:w-[70px]' src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${tech}/${tech2}.svg`} />
         </div>
-      </div>
       <div className={style["tooltiptext"]}>{tooltip}</div>
     </div>
   )
