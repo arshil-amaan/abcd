@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
 import React, { useEffect, useState } from 'react'
-import SkillCard from "./skillCard";
+import SkillCard from "./SkillCardd";
 
 const techList = [
     { tech: "html5", tooltip: "HTML5 structures and presents web content." },
