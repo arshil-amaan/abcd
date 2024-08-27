@@ -60,7 +60,7 @@ export default (props) => {
     return (
         <>
             {/* carousel */}
-            <div className="slideC w-[250px] h-[400px] m-0 relative left-[-10px]">
+            <div className="slideC md:hidden flex items-center justify-center flex-col w-[250px] h-[400px] m-0">
                 {props.data.map((item, i) => (
                     <React.Fragment key={item.id}>
                         <div

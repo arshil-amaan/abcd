@@ -7,48 +7,60 @@ import React, { useState } from 'react';
 import { Background, Parallax } from 'react-parallax';
 import imageOverlay from '../../assets/earth.webp';
 import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
+const url = import.meta.env.VITE_URL;
 
 const Contact = () => {
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-
-    const submitHandler = async e => {
+    const [isLoading, setIsLoading] = useState(false);
+    const submitHandler = async (e) => {
         e.preventDefault();
-        try {
-            fetch('https://sheetdb.io/api/v1/7yb9lf373i7fc', {
-                method: 'POST',
+
+        if (!navigator.onLine) {
+            toast.error('No internet connection. Please check your connection and try again.');
+            return;
+        }
+        setIsLoading(true);
+        toast.promise(
+            axios.post(url, {
+                data: [
+                    {
+                        id: "INCREMENT",
+                        name: name,
+                        email: email,
+                        message: message,
+                    },
+                ],
+            }, {
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    data: [
-                        {
-                            'id': "INCREMENT",
-                            'name': name,
-                            'email': email,
-                            'message': message
-                        }
-                    ]
-                })
-            })
-                .then((response) => response.json())
-                .then((data) => console.log(data))
-                .then(toast.success('Message sent successfully.'));
-        } catch (error) {
+            }).then((response) => {                // No need to manually parse JSON with axios
+                return 'Message sent successfully.';
+            }),
+            {
+                loading: 'Sending...',
+                success: <b>Message Sent with Axios</b>,
+                error: <b>Could not send.</b>,
+            }
+        ).catch((error) => {
             console.error('Error:', error);
-            toast.error('Couldn\'t send message.')
-        }
+            toast.error('Couldn\'t send message.');
+        }).finally(() => {
+            setIsLoading(false);
+        });
     };
+
 
     return (
         <Parallax bgImage={imageOverlay} bgImageAlt="layered earth" bgImageStyle={{ objectFit: 'cover' }} strength={-150} className='relative '>
-<Toaster/>
+            <Toaster />
             <section id='contact' className='flex justify-center items-center py-16 px-4 sm:px-8'>
                 <div className="container mx-auto flex flex-col lg:flex-row bg-gray-100 rounded-lg shadow-lg p-6 lg:p-12">
-                    <div className='w-full lg:w-1/2 px-4 sm:px-6 mb-8 lg:mb-0'>
+                    <div className='w-full lg:w-1/2 px-4 sm:px-6 mb-8 lg:mb-0 text-slate-700'>
                         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">Contact Me</h2>
                         <form onSubmit={submitHandler}>
                             <div className="mb-4">
@@ -84,9 +96,13 @@ const Contact = () => {
                                 ></textarea>
                             </div>
                             <button
-                                className="flex items-center bg-cyan-400 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest rounded-md hover:bg-cyan-500 duration-300 hover:gap-2 hover:translate-x-3"
+                                className="flex items-center bg-cyan-400 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest rounded-md
+                                hover:bg-cyan-500 duration-300 hover:gap-2 hover:translate-x-3 hover:shadow-[4px_4px_7px_black]
+                                focus:outline-none focus:ring-2 focus:ring-cyan-300
+                                active:bg-cyan-600 active:translate-x-4 active:translate-y-[0.10rem] active:shadow-none"
+                                disabled={isLoading} // Disable button while loading
                             >
-                                Send
+                                {isLoading ? 'Sending...' : 'Send'}
                                 <svg
                                     className="w-5 h-5"
                                     stroke="currentColor"
@@ -111,19 +127,38 @@ const Contact = () => {
                         <p className='text-gray-800 md:text-xl mb-6 md:my-12'>Whether you want to get in touch, talk about a project collaboration, or just say hi, I'd love to hear from you.
                             Simply fill out the form and send me an email.</p>
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-5">
-                            <a href="https://drive.google.com/drive/folders/16cqxgYdWWXXogeputCJBm4x0NnsUURnY?usp=sharing" target='_blank' rel="noopener noreferrer" className="md:w-fit w-1/4">
-                                <TextSnippet className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                            <a href="https://drive.google.com/drive/folders/16cqxgYdWWXXogeputCJBm4x0NnsUURnY?usp=sharing" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
+               transition-transform duration-300
+               hover:shadow-[4px_4px_7px_black] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none"
+                                style={{ border: "5px #fde68a solid" }}>
+                                <TextSnippet
+                                    style={{ fill: "rgb(31 41 55)", fontSize: "2.5rem", padding: "5px" }}
+                                />
+
                             </a>
-                            <a href="https://github.com/arshil-amaan" target='_blank' rel="noopener noreferrer" className="md:w-fit w-1/4">
+                            <a href="https://github.com/arshil-amaan" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
+               transition-transform duration-300
+               hover:shadow-[4px_4px_7px_black] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <GitHub className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
-                            <a href="https://www.linkedin.com/in/arshil-amaan/" target='_blank' rel="noopener noreferrer" className="md:w-fit w-1/4">
+                            <a href="https://www.linkedin.com/in/arshil-amaan/" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
+               transition-transform duration-300
+               hover:shadow-[4px_4px_7px_black] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <LinkedIn className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
-                            <a href="mailto:arshilamaanansari@gmail.com" target='_blank' rel="noopener noreferrer" className="md:w-fit w-1/4">
+                            <a href="mailto:arshilamaanansari@gmail.com" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
+               transition-transform duration-300
+               hover:shadow-[4px_4px_7px_black] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <Email className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
-                            <a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" className="md:w-fit w-1/4">
+                            <a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
+               transition-transform duration-300
+               hover:shadow-[4px_4px_7px_black] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <Whatsapp className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                         </div>

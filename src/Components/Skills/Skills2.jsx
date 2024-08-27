@@ -53,15 +53,13 @@ const Skills = () => {
     useEffect(() => {
         const handleResize = () => {
             setIsMd(window.innerWidth >= 768); // md: corresponds to 768px
-            console.log("changes");
-            console.log(window.innerWidth);
         };
         handleResize(); // Initialize on mount
         window.addEventListener('resize', handleResize);
     }, []);
     return (
         <section id='skills-section' className='flex flex-col justify-center items-center p-12'>
-            <h2 className='text-3xl font-bold text-center mb-12'>Tech Stack</h2>
+            <h2 className='text-3xl font-bold text-center '>Tech Stack</h2>
             <Marquee speed={60} direction="" className=" pt-24" pauseOnHover style={isMd ? {
                 WebkitMaskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 98%)",
                 maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 98%)"

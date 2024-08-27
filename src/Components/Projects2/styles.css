@@ -55,17 +55,6 @@
 }
 
 /* normal css  */
-
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-}
-
 .btns .btn {
   cursor: pointer;
 }

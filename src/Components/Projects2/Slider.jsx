@@ -58,7 +58,7 @@ export default (props) => {
     return (
         <>
             {/* carousel */}
-            <div className="slideC">
+            <div className="slideC flex flex-col">
                 {props.data.map((item, i) => (
                     <React.Fragment key={item.id}>
                         <div
