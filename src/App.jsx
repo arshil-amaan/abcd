@@ -24,20 +24,21 @@ function App() {
             'Content-Type': 'application/json'
           }
         });
-
-        console.log('Fetched data:', response.data);
-        const newVisitorCount = parseInt(response.data.F2) + 1;
-        const updateResponse = await axios.patch(`${url}/id/0`, {
-          data: {
-            'visitor_count': newVisitorCount
-          }
-        }, {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          }
-        });
-        console.log('Updated data:', updateResponse.data);
+        if (response.data && response.data.F2) {
+          const newVisitorCount = parseInt(response.data.F2) + 1;
+          await axios.patch(`${url}/id/0`, {
+            data: {
+              'visitor_count': newVisitorCount
+            }
+          }, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          });
+        } else {
+          console.error('Error receiving visitor count');
+        }
       } catch (error) {
         console.error('Error:', error);
       }

@@ -3,6 +3,7 @@ import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import Email from '@mui/icons-material/Email';
 // import WhatsApp from '@mui/icons-material/WhatsApp';
+import Phone from '@mui/icons-material/PhoneEnabled';
 import React, { useEffect, useState } from 'react';
 import { Parallax } from 'react-parallax';
 import imageOverlay from '../../assets/earth.webp';
@@ -154,6 +155,13 @@ const Contact = () => {
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <Email className='rounded-full' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                            </a>
+                            <a href="tel:+91-7786989680"
+                                className="rounded-full cursor-pointer md:w-fit w-1/4
+               transition-transform duration-300
+               hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none">
+                                <Phone className='rounded-full' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             {/*<a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
