@@ -13,7 +13,6 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@flodlc/nebula": "^1.0.56",
-    "@material-tailwind/react": "^2.1.9",
     "@mui/icons-material": "^5.16.7",
     "aos": "^2.3.4",
     "axios": "^1.7.5",
