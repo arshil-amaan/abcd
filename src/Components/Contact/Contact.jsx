@@ -132,7 +132,7 @@ const Contact = () => {
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none"
                                 style={{ border: "5px #fde68a solid" }}>
-                                <TextSnippet
+                                <TextSnippet className='rounded-full'
                                     style={{ fill: "rgb(31 41 55)", fontSize: "2.5rem", padding: "5px" }}
                                 />
 
@@ -141,19 +141,19 @@ const Contact = () => {
                transition-transform duration-300
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <GitHub className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <GitHub className='rounded-full' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             <a href="https://www.linkedin.com/in/arshil-amaan/" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <LinkedIn className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <LinkedIn className='rounded-full' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             <a href="mailto:arshilamaanansari@gmail.com" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <Email className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <Email className='rounded-full' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             {/*<a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
