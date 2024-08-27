@@ -53,7 +53,7 @@ const Hero = () => {
                             </Fade>
                         </div>
                         <div className='flex'>
-                            <Slide triggerOnce={true} className='mb-9 text-3xl md:text-6xl'>
+                            <Slide triggerOnce={true} className='mb-9 text-2xl md:text-6xl'>
                                 <p>To&nbsp;</p>
                             </Slide>
                             <Fade triggerOnce={true} delay={2e3} cascade damping={1e-1} className='mb-9 inline font-extrabold font-beauty'>
