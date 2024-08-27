@@ -40,7 +40,7 @@ const Contact = () => {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
-            }).then((response) => {                // No need to manually parse JSON with axios
+            }).then((response) => {
                 return 'Message sent successfully.';
             }),
             {
@@ -65,7 +65,7 @@ const Contact = () => {
                     <div className='w-full lg:w-1/2 px-4 sm:px-6 mb-8 lg:mb-0 text-slate-700'>
                         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">Contact Me</h2>
                         <form onSubmit={submitHandler}>
-                            <div className="mb-4">
+                            <div className="mb-4 text-xl" >
                                 <label className="block text-gray-800 mb-1" htmlFor="name">Your Name</label>
                                 <input
                                     className="w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300 transition duration-300"
@@ -75,7 +75,7 @@ const Contact = () => {
                                     value={name} onChange={(e) => setName(e.target.value)} required
                                 />
                             </div>
-                            <div className="mb-4">
+                            <div className="mb-4 text-xl">
                                 <label className="block text-gray-800 mb-1" htmlFor="email">Your Email</label>
                                 <input
                                     className="w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300 transition duration-300"
@@ -86,7 +86,7 @@ const Contact = () => {
                                     value={email} onChange={(e) => { setEmail(e.target.value); console.log(email) }} required
                                 />
                             </div>
-                            <div className="mb-4">
+                            <div className="mb-4 text-xl">
                                 <label className="block text-gray-800 mb-1" htmlFor="message">Your Message</label>
                                 <textarea
                                     className="w-full px-4 py-2 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300 transition duration-300"
@@ -98,11 +98,11 @@ const Contact = () => {
                                 ></textarea>
                             </div>
                             <button
-                                className="flex items-center bg-cyan-400 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest rounded-md
+                                className="flex items-center bg-cyan-400 gap-1 px-4 py-2 cursor-pointer text-gray-800 font-semibold tracking-widest text-xl rounded-md
                                 hover:bg-cyan-500 duration-300 hover:gap-2 hover:translate-x-3 hover:shadow-[4px_4px_7px_black]
                                 focus:outline-none focus:ring-2 focus:ring-cyan-300
                                 active:bg-cyan-600 active:translate-x-4 active:translate-y-[0.10rem] active:shadow-none"
-                                disabled={isLoading} // Disable button while loading
+                                disabled={isLoading}
                             >
                                 {isLoading ? 'Sending...' : 'Send'}
                                 <svg
@@ -126,41 +126,49 @@ const Contact = () => {
                     <div className='w-full lg:w-1/2 px-4 sm:px-6'>
                         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">Get in Touch</h2>
 
-                        <p className='text-gray-800 md:text-xl mb-6 md:my-12'>Whether you want to get in touch, talk about a project collaboration, or just say hi, I'd love to hear from you.
-                            Simply fill out the form and send me an email.</p>
+                        <p className='text-gray-800 text-xl mb-6 md:my-12'>Whether you want to get in touch, talk about a project collaboration, or just say hi, I'd love to hear from you.
+                            Simply fill out the form or send me an email.</p>
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-5">
                             <a href="https://drive.google.com/drive/folders/16cqxgYdWWXXogeputCJBm4x0NnsUURnY?usp=sharing" target='_blank' rel="noopener noreferrer" title="View my Resume" className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
+               hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <TextSnippet className='rounded-full hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1'
+                                <TextSnippet className='rounded-full hover:shadow-[4px_4px_7px_#cab76e]'
                                     style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }}
                                 />
                             </a>
                             <a href="https://github.com/arshil-amaan" target='_blank' rel="noopener noreferrer" title="Visit my Github" className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
-               active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <GitHub className='rounded-full hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+               hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
+               active:translate-x-1 active:translate-y-1 active:shadow-none
+            ">
+                                <GitHub className='rounded-full hover:shadow-[4px_4px_7px_#cab76e]
+                                ' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             <a href="https://www.linkedin.com/in/arshil-amaan/" target='_blank' rel="noopener noreferrer" title="Visit my LinkedIn" className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
+               hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <LinkedIn className='rounded-full hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <LinkedIn className='rounded-full hover:shadow-[4px_4px_7px_#cab76e]' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             <a href="mailto:arshilamaanansari@gmail.com" target='_blank' rel="noopener noreferrer" title="Mail me" className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
+               hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <Email className='rounded-full hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <Email className='rounded-full hover:shadow-[4px_4px_7px_#cab76e]' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
-                            <a href="tel:+91-7786989680"  title="Call me"
+                            <a href="tel:+91-7786989680" title="Call me"
                                 className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
+               hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <Phone className='rounded-full hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <Phone className='rounded-full hover:shadow-[4px_4px_7px_#cab76e]' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                             <a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" title="WhatsApp me" className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
+               hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
-                                <WhatsApp className='rounded-full hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
+                                <WhatsApp className='rounded-full hover:shadow-[4px_4px_7px_#cab76e]' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
                         </div>
                     </div>

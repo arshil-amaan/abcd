@@ -49,7 +49,7 @@ function App() {
 
 
   return (
-    <>
+    <div className='font-defall'>
       {/* Hero section */}
       <Hero />
 
@@ -68,7 +68,7 @@ function App() {
 
       {/* Footer section */}
       <Footer />
-    </>
+    </div>
   )
 }
 

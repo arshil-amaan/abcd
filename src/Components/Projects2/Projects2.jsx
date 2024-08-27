@@ -16,7 +16,8 @@ const Projects2 = () => {
     }, []);
     return (
         <div id="projects-section" className="flex justify-center items-center flex-col w-full py-10">
-            <h2 className='text-3xl font-bold text-center mb-12'>Projects</h2>
+            <h2 className='text-3xl md:text-5xl font-bold text-center mb-12'>Projects</h2>
+
             {isMd ? <Slider data={data} activeSlide={2} /> : <SliderM data={data} activeSlide={2} />}
 
 

@@ -7,16 +7,11 @@ const Hero = () => {
 
     const word1 = "Brilliant";
     const word2 = "Solutions";
-
-    // Define the getSpan function to return the array of spans
+    
     const getSpan = (word) => {
         return word.split('').map((letter, index) => (
             <span
-                className='text-4xl md:text-8xl'
-                style={{
-                    WebkitTextStroke: '1px #fde68a',
-                    WebkitTextFillColor: 'transparent'
-                }}
+                className='text-4xl md:text-8xl md:text-stroke-1 text-amber-300 md:text-fill-transparent'
                 key={index}
             >
                 {letter}
@@ -30,50 +25,58 @@ const Hero = () => {
     return (
         <>
             <div className='h-dvh flex justify-center flex-col items-center' id='hero-section'>
-                <ReactNebula />
+                <ReactNebula config={{
+                    starsCount: 680,
+                    starsColor: "#FFF",
+                    starsRotationSpeed: 3,
+                    cometFrequence: 100,
+                    nebulasIntensity: 10,
+                    bgColor: "rgb(8,8,8)",
+                    sunScale: 3,
+                    planetsScale: 3,
+                    solarSystemOrbite: 65,
+                    solarSystemSpeedOrbit: 100
+                }} />
                 <div className='flex flex-col justify-center items-center z-10'>
-                    <div className='text-xl md:text-6xl md:mb-10'>
-                        <div className='flex'>
-                            <Slide triggerOnce={true} className='md:text-6xl mb-9 font-bold'>
+                    <div className='md:mb-10 font-bold text-xl md:text-6xl'>
+                        <div className='flex justify-center'>
+                            <Slide triggerOnce={true} className='text-4xl md:text-6xl mb-9'>
                                 <p>From&nbsp;</p>
                             </Slide>
 
-                            <Fade triggerOnce={true} delay={1e3} cascade damping={2e-1} className=' mb-9 inline font-bold'>
-                                <span className='text-4xl md:text-8xl' style={{
-                                    WebkitTextStroke: '1px #fde68a', WebkitTextFillColor: 'transparent'
-                                }}>Zeroes</span>
+                            <Fade triggerOnce={true} delay={1e3} cascade damping={2e-1} className='mb-9 inline '>
+                                <span className='text-4xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent' >ZEROS</span>
 
-                                <span>&nbsp;and&nbsp;</span>
+                                <span className='text-4xl md:text-6xl'>&nbsp;and&nbsp;</span>
 
-                                <span className='text-4xl md:text-8xl' style={{
-                                    WebkitTextStroke: '1px #fde68a', WebkitTextFillColor: 'transparent'
-                                }}>Ones</span>
+                                <span className='text-4xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent'>ONES</span>
                             </Fade>
                         </div>
                         <div className='flex'>
-                            <Slide triggerOnce={true} className=' mb-9 font-bold'>
+                            <Slide triggerOnce={true} className='mb-9 text-3xl md:text-6xl'>
                                 <p>To&nbsp;</p>
                             </Slide>
-                            <Fade triggerOnce={true} delay={2e3} cascade damping={1e-1} className=' mb-9 inline font-bold'>
+                            <Fade triggerOnce={true} delay={2e3} cascade damping={1e-1} className='mb-9 inline font-extrabold font-beauty'>
                                 {spans1}
                             </Fade>&nbsp;
-                            <Fade triggerOnce={true} delay={2.9e3} cascade damping={1e-1} className=' mb-9 inline font-bold'>
+                            <Fade triggerOnce={true} delay={2.9e3} cascade damping={1e-1} className='mb-9 inline  font-beauty'>
                                 {spans2}
                             </Fade>
                         </div>
                     </div>
+
                     <Fade delay={4e3} triggerOnce={true}>
                         <div className="hero-links flex leading-loose">
 
                             <a
                                 href='#about-section'
-                                className='md:text-xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
+                                className='text-xl md:text-2xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
                             >
                                 About
                             </a>
                             <a
                                 href='#projects-section'
-                                className='md:text-xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
+                                className='text-xl md:text-2xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
                             >
                                 Projects
                             </a>

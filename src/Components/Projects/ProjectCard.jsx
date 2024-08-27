@@ -19,11 +19,11 @@ const ProjectCard = ({ projImg, description, title, ghLink, demoLink }) => {
 
             <div className={`${style["card2"]} bg-amber-100`}>
                 <div className={style["upper"]}>
-                    <h1 className="text-3xl font-bold">{title}</h1>
+                    <h1 className="text-3xl font-bold font-defall">{title}</h1>
                 </div>
 
                 <div className={style["lower"]}>
-                    <p className='text-sm px-5'>{description}</p>
+                    <p className='text-base px-5 font-defall'>{description}</p>
                     <div className={style["card3"]}>
                         <img src={live} alt="liveIc" width={"25%"} style={{ marginTop: '-10px' }} />
                     </div>

@@ -101,8 +101,8 @@ const SliderContent = (props) => {
         <div className="content">
             <div style={{ boxShadow: `0 5px 20px ${props.bgColor}30` }} className="w-64 p-4 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out">
                 <img className="w-full h-40 object-cover rounded-t-lg" alt="Card Image" src={props.projImg} />
-                <h2 className="text-xl mt-6 font-semibold">{props.title}</h2>
-                <p className="text-white">{props.shortDescription}</p>
+                <h2 className="text-xl mt-6 tracking-widest">{props.title}</h2>
+                <p className="text-white font-sans">{props.shortDescription}</p>
                 <div className="flex justify-around items-center mt-4">
                     <Button to={'github'} goto={props.ghLink} />
                     <Button to={'site'} goto={props.demoLink} />

@@ -31,7 +31,7 @@ const Button = ({to,goto}) => {
 
     // padding: 0.75rem 1rem;
     return (
-        <a href={goto} target="_blank" rel="noopener noreferrer" className={`${style["btn-github"]} px-2 py-2 md:px-3 md:py-4`}>
+        <a href={goto} target="_blank" rel="noopener noreferrer" className={`${style["btn-github"]} px-2 py-2 md:px-3 md:py-4 text-base`}>
             {sv}
             <span>{title}</span>
         </a >
