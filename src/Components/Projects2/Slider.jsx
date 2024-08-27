@@ -83,7 +83,7 @@ export default (props) => {
             </div>
             {/* carousel */}
 
-            <div className="btns flex justify-center items-center z-20">
+            <div className="btns flex justify-center items-center z-20 pt-12">
                 <div
                     className="btn"
                     onClick={prev}
