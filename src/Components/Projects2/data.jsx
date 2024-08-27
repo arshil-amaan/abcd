@@ -55,7 +55,7 @@ export default [
     shortDescription:
       "Showcased my journey with an interactive, visually striking portfolio built with Bootstrap. A blend of aesthetics and functionality.",
     ghLink: "https://github.com/arshil-amaan/portfolio",
-    demoLink: "https://arshil.netlify.app/"
+    demoLink: "https://arshilv2.netlify.app/"
   },
   {
     id: 4,
