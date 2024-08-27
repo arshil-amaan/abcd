@@ -1,18 +1,17 @@
-import Carousel from "./Carousel/Carousel";
+import SliderM from './Carousel/SliderM'
 import Slider from "./Slider";
 import data from "./data";
 import './styles.css'
 
 const Projects2 = () => {
     return (
-        <div id="projects-section" className="center  border-blue-300">
+        <div id="projects-section" className="center border-blue-300">
             <h2 className='text-3xl font-bold text-center mb-12'>Projects</h2>
-            {/* <div className="hidden md:block text-center">
+            <div className="hidden md:flex flex-col">
                 <Slider data={data} activeSlide={2} />
-            </div> */}
-            {/* <div className="md:hidden"> */}
-            <div>
-                <Carousel />
+            </div>
+            <div className='md:hidden flex items-center justify-center flex-col w-[280px]'>
+                <SliderM data={data} activeSlide={2}/>
             </div>
         </div>
     )

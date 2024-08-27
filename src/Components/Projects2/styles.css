@@ -8,7 +8,6 @@
 }
 
 .slide {
-  width: 590px;
   height: 339px;
   transition: transform 500ms ease 0s, opacity 500ms ease 0s,
     visibility 500ms ease 0s;
@@ -65,11 +64,6 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-}
-
-.btns {
-  padding-top: 100px;
-  display: flex;
 }
 
 .btns .btn {
