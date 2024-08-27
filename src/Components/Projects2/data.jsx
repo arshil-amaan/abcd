@@ -53,7 +53,7 @@ export default [
     description:
       "An elegantly crafted website built with Bootstrap and hosted on GitHub Pages. This interactive and visually striking platform showcases a compelling narrative of professional journey, work experience, education, projects, and achievements. Designed to leave a lasting impression, the site blends aesthetics with functionality to create a memorable web presence.",
     shortDescription:
-      "Showcase your journey with an interactive, visually striking portfolio built with Bootstrap. A blend of aesthetics and functionality.",
+      "Showcased my journey with an interactive, visually striking portfolio built with Bootstrap. A blend of aesthetics and functionality.",
     ghLink: "https://github.com/arshil-amaan/portfolio",
     demoLink: "https://arshil.netlify.app/"
   },
@@ -111,9 +111,9 @@ export default [
     projImg: proj9,
     title: "College Website",
     description:
-      "A meticulously crafted digital platform that highlights a premier technical institute's rich history and vibrant student community. The site integrates dynamic content presentation with interactive elements, offering an immersive exploration of the institution's legacy and user-generated insights. Delve into the website to experience a cutting-edge showcase of academic excellence and community feedback.",
+      "A meticulously crafted digital platform that highlights a premier technical institute's rich history and vibrant student community. The site integrates content presentation with interactive elements, offering an immersive exploration of the institution's legacy. Delve into the website to experience a cutting-edge showcase of academic excellence and community feedback.",
     shortDescription:
-      "Explore a technical institute's rich history and vibrant community with dynamic content and interactive elements.",
+      "A meticulously crafted digital platform that highlights a premier technical institute's rich history and vibrant student community.",
     ghLink: "https://github.com/arshil-amaan/college-site",
     demoLink: "https://arshil-amaan.github.io/college-site"
   }
