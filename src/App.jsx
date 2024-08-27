@@ -89,7 +89,9 @@ function App() {
       {showButton && (
         <button
           id="scrollToTopButton"
-          className="fixed bottom-5 right-5 bg-cyan-400 text-fill-transparent p-3 rounded-full shadow-lg duration-300 opacity-80 hover:-translate-y-1 hover:transition-all"
+          className="fixed bottom-2 right-2 md:bottom-5 md:right-5 bg-cyan-400 text-fill-transparent p-3 rounded-full shadow-black shadow-md duration-300 opacity-80
+          hover:-translate-y-1 hover:transition-all
+          active:shadow-none active:translate-y-1"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <PanToolAltIcon />
