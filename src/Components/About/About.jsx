@@ -21,7 +21,7 @@ const About = () => {
                     <Button />
                 </div>
             </div>
-            <div className='bg-amber-200 md:w-1/3 flex justify-center items-center h-full'>
+            <div className='bg-amber-200 md:w-1/3 flex justify-center items-center'>
                 <img data-aos="zoom-in-up" src={myImg} className='object-contain h-full' style={{
                     WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%)",
                     maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%)"
