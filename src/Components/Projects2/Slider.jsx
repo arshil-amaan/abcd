@@ -74,6 +74,7 @@ export default (props) => {
                         <div
                             className="reflection"
                             style={{
+                                zIndex:-1,
                                 background: `linear-gradient(to bottom, ${item.bgColor}20, transparent)`,
                                 ...getStyles(i)
                             }}
@@ -83,18 +84,14 @@ export default (props) => {
             </div>
             {/* carousel */}
 
-            <div className="btns flex justify-center items-center z-20 pt-12">
+            <div className="btns flex justify-between gap-8 pt-16">
                 <div
                     className="btn"
                     onClick={prev}
-                    color="#fff"
-                    size="2x"
                 ><ArrowBackIosRoundedIcon style={{ fontSize: '40px' }} /></div>
                 <div
                     className="btn"
                     onClick={next}
-                    color="#fff"
-                    size="2x"
                 ><ArrowForwardIosRoundedIcon style={{ fontSize: '40px' }} /></div>
             </div>
         </>

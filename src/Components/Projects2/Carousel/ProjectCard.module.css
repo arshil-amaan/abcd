@@ -42,7 +42,8 @@
     height: 130px;
     /* height: 580px; test */
     border-radius: 35px;
-    background: white;
+    
+    background-color: #fcd34d;
     z-index: -1;
     top: 20px;
     /* top: -50px; test */
@@ -77,6 +78,8 @@
     /* display: flex; */
     /* flex-direction: row; */
     position: relative;
+    
+    background-color: #fcd34d;
     color: black;
     left: 1.8em;
     top: 0.5em;
@@ -89,6 +92,7 @@
     justify-content: space-between;
     position: absolute;
     text-align: center;
+    background-color: #fcd34d;
     color: black;
     top: 0em;
     font-size: 0.7em;
