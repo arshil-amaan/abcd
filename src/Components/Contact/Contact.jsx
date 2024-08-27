@@ -2,9 +2,9 @@ import TextSnippet from '@mui/icons-material/TextSnippet';
 import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import Email from '@mui/icons-material/Email';
-import Whatsapp from '@mui/icons-material/Whatsapp';
+// import WhatsApp from '@mui/icons-material/WhatsApp';
 import React, { useState } from 'react';
-import { Background, Parallax } from 'react-parallax';
+import { Parallax } from 'react-parallax';
 import imageOverlay from '../../assets/earth.webp';
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
@@ -155,12 +155,12 @@ const Contact = () => {
                active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <Email className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
                             </a>
-                            <a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
+                            {/*<a href="https://wa.me/917786989680" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
                active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <Whatsapp className='rounded-full cursor-pointer' style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border: "5px #fde68a solid" }} />
-                            </a>
+                            </a>*/}
                         </div>
                     </div>
                 </div>
