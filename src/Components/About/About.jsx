@@ -1,4 +1,4 @@
-import myImg from '../../assets/portfolio-pic.png';
+import myImg from '../../assets/portfolio-pic.webp';
 import React from 'react';
 import { AttentionSeeker, Bounce } from "react-awesome-reveal";
 import Button from './Button/Button';
