@@ -130,10 +130,9 @@ const Contact = () => {
                             <a href="https://drive.google.com/drive/folders/16cqxgYdWWXXogeputCJBm4x0NnsUURnY?usp=sharing" target='_blank' rel="noopener noreferrer" className="rounded-full cursor-pointer md:w-fit w-1/4
                transition-transform duration-300
                hover:shadow-[4px_4px_7px_#cab76e] hover:gap-2 hover:-translate-x-1 hover:-translate-y-1
-               active:translate-x-1 active:translate-y-1 active:shadow-none"
-                                style={{ border: "5px #fde68a solid" }}>
+               active:translate-x-1 active:translate-y-1 active:shadow-none">
                                 <TextSnippet className='rounded-full'
-                                    style={{ fill: "rgb(31 41 55)", fontSize: "2.5rem", padding: "5px" }}
+                                    style={{ fill: "rgb(31 41 55)", fontSize: "50px", padding: "5px", border:"5px #fde68a solid" }}
                                 />
 
                             </a>
