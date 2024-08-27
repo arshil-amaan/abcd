@@ -11,7 +11,7 @@ const Hero = () => {
     const getSpan = (word) => {
         return word.split('').map((letter, index) => (
             <span
-                className='text-4xl md:text-8xl md:text-stroke-1 text-amber-300 md:text-fill-transparent'
+                className='text-2xl md:text-8xl md:text-stroke-1 text-amber-300 md:text-fill-transparent'
                 key={index}
             >
                 {letter}
@@ -40,16 +40,16 @@ const Hero = () => {
                 <div className='flex flex-col justify-center items-center z-10'>
                     <div className='md:mb-10 font-bold text-xl md:text-6xl'>
                         <div className='flex justify-center'>
-                            <Slide triggerOnce={true} className='text-4xl md:text-6xl mb-9'>
+                            <Slide triggerOnce={true} className='text-2xl md:text-6xl mb-9'>
                                 <p>From&nbsp;</p>
                             </Slide>
 
                             <Fade triggerOnce={true} delay={1e3} cascade damping={2e-1} className='mb-9 inline '>
-                                <span className='text-4xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent' >ZEROS</span>
+                                <span className='text-2xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent' >ZEROS</span>
 
-                                <span className='text-4xl md:text-6xl'>&nbsp;and&nbsp;</span>
+                                <span className='text-2xl md:text-6xl'>&nbsp;and&nbsp;</span>
 
-                                <span className='text-4xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent'>ONES</span>
+                                <span className='text-2xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent'>ONES</span>
                             </Fade>
                         </div>
                         <div className='flex'>
