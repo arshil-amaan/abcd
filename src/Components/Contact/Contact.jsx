@@ -43,7 +43,7 @@ const Contact = () => {
             }),
             {
                 loading: 'Sending...',
-                success: <b>Message Sent with Axios</b>,
+                success: <b>Message Sent</b>,
                 error: <b>Could not send.</b>,
             }
         ).catch((error) => {
