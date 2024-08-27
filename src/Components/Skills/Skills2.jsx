@@ -47,7 +47,7 @@ const techList2 = [
     { tech: "cplusplus", tooltip: "C++ extends C with object-oriented features." }
 ];
 
-const Skills = () => {
+const SkillsNew = () => {
     const [isMd, setIsMd] = useState(false);
 
     useEffect(() => {
@@ -82,4 +82,4 @@ const Skills = () => {
     )
 }
 
-export default Skills;
+export default SkillsNew;
