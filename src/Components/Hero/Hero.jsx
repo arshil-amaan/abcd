@@ -5,7 +5,7 @@ import { Fade, Slide } from "react-awesome-reveal";
 
 const Hero = () => {
 
-    const word1 = "Brilliant";
+    const word1 = "Brilliance";
     const word2 = "Solutions";
     
     const getSpan = (word) => {
