@@ -125,7 +125,7 @@ const Contact = () => {
                     <div className='w-full lg:w-1/2 px-4 sm:px-6'>
                         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">Get in Touch</h2>
 
-                        <p className='text-gray-800 text-xl mb-6 md:my-12'>Whether you want to get in touch, talk about a project collaboration, or just say hi, I'd love to hear from you.
+                        <p className='text-gray-800 text-xl mb-6 md:my-12'>Whether you want to get in touch, talk about a project collaboration, or just say hi, I&apos;d love to hear from you.
                             Simply fill out the form or send me an email.</p>
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-5">
                             <a href="https://drive.google.com/drive/folders/16cqxgYdWWXXogeputCJBm4x0NnsUURnY?usp=sharing" target='_blank' rel="noopener noreferrer" title="View my Resume" className="flex items-center justify-center cursor-pointer md:w-fit w-1/4
