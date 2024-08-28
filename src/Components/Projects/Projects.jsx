@@ -14,7 +14,7 @@ const Projects2 = () => {
         window.addEventListener('resize', handleResize);
     }, []);
     return (
-        <div id="projects-section" className="flex justify-center items-center flex-col w-full py-10">
+        <div id="projects-section" className="flex justify-center items-center flex-col w-full pb-24 pt-6 overflow-x-auto">
             <h2 className='text-3xl md:text-5xl font-bold text-center mb-12'>Projects</h2>
 
             {isMd ? <Slider data={data} activeSlide={2} /> : <SliderM data={data} activeSlide={2} />}

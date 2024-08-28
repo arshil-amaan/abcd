@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import Button from "../UI/Button";
-import styles from '../styles.module.css'
 
 
 export default (props) => {
@@ -62,11 +61,11 @@ export default (props) => {
     return (
         <>
             {/* carousel */}
-            <div className={`${styles['slideC']} md:hidden flex items-center justify-center flex-col w-[250px] h-[400px] m-0`}>
+            <div className={`md:hidden flex items-center justify-center flex-col relative perspective-1000 transform-style-preserve-3d w-auto h-96`}>
                 {props.data.map((item, i) => (
                     <React.Fragment key={item.id}>
                         <div
-                            className={`${styles['slide']} h-[430px] w-64 p-4 rounded-3xl transform transition-all duration-500 flex flex-col ease-out absolute`}
+                            className="h-[430px] w-64 p-4 rounded-3xl transform transition-all duration-500 flex flex-col ease-out absolute"
                             style={{
                                 background: item.bgColor,
                                 ...getStyles(i)

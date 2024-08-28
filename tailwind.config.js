@@ -15,7 +15,10 @@ export default {
         defall: ['defall', 'sans-serif'],
       },
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(to right, #22d3ee 97%, #fde68a 99.9%)',
+        'about-gradient': 'linear-gradient(to right, #22d3ee 97%, #fde68a 99.9%)',
+      },
+      backgroundColor: {
+        'translucent': 'rgba(0,0,0,0.7)',
       },
       // Define custom perspective values
       perspective: {

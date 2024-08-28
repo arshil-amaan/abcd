@@ -6,7 +6,7 @@ import Button from './Button/Button';
 const About = () => {
     return (
         <div id='about-section' className='about-wrapper flex flex-col-reverse md:flex-row text-slate-800 text-lg h-full'>
-            <div className='bg-cyan-400 md:w-2/3 p-12 md:bg-custom-gradient flex flex-col justify-center'>
+            <div className='bg-cyan-400 md:w-2/3 p-12 md:bg-about-gradient flex flex-col justify-center'>
                 <h2 className='text-5xl md:text-7xl font-semibold md:ml-6 font-beauty'>
                     Welcome
                     <Bounce style={{ animationIterationCount: 'infinite' }} className='inline-block'>.</Bounce>

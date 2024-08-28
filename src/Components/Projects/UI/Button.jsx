@@ -29,9 +29,8 @@ const Button = ({to,goto}) => {
         </svg>)
     }
 
-    // padding: 0.75rem 1rem;
     return (
-        <a href={goto} target="_blank" rel="noopener noreferrer" className={`${style["btn-github"]} px-2 py-2 md:px-3 md:py-4 text-base`}>
+        <a href={goto} target="_blank" rel="noopener noreferrer" className={`${style["btn-github"]} flex md:gap-2 rounded-3xl items-center justify-center cursor-pointer px-2 py-2 md:px-3 text-base md:text-lg transition-all backdrop-blur-2xl md:tracking-wide text-slate-800 hover:text-amber-300 hover:-translate-y-1`}>
             {sv}
             <span>{title}</span>
         </a >

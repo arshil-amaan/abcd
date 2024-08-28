@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ProjectCard from "../UI/ProjectCard";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-import styles from '../styles.module.css'
 
 
 export default (props) => {
@@ -60,18 +59,18 @@ export default (props) => {
     return (
         <>
             {/* carousel */}
-            <div className={`${styles["slideC"]}flex flex-col w-screen justify-center items-center text-center h-[379px] mx-0 my-auto perspective-1000 transform-style-preserve-3d overflow-x-auto`}>
+            <div id="carousel-window" className={`w-[569px] h-80 mx-0 my-auto perspective-1000 transform-style-preserve-3d rounded-3xl relative`}>
                 {props.data.map((item, i) => (
-                    <React.Fragment key={item.id}>
-                        <div
-                            className={`${styles['slide']} flex items-center justify-center transition-all duration-500 absolute`}
+                    <React.Fragment style={{backgroundColor:"red"}} key={item.id}>
+                        <div id="single-carousel-element"
+                            className={`flex h-full w-full items-center justify-center transition-all duration-500 absolute rounded-3xl`}
                             style={{
                                 background: item.bgColor,
-                                boxShadow: `0 5px 20px ${item.bgColor}30`,
+                                // boxShadow: `0 5px 20px ${item.bgColor}30`,
                                 ...getStyles(i)
                             }}
                         >
-                            <SliderContent {...item} />
+                            <ProjectCard {...item} />
                         </div>
                         <div
                             className={`absolute w-full h-16 -bottom-14 rounded-3xl rounded-bl-none rounded-br-none transition-all duration-500`}
@@ -97,13 +96,5 @@ export default (props) => {
                 ><ArrowForwardIosRoundedIcon style={{ fontSize: '40px' }} /></div>
             </div>
         </>
-    );
-};
-
-const SliderContent = ({ projImg, description, title, ghLink, demoLink }) => {
-    return (
-        <div>
-            <ProjectCard projImg={projImg} description={description} title={title} ghLink={ghLink} demoLink={demoLink} />
-        </div>
     );
 };
