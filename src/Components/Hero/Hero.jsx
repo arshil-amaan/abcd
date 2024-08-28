@@ -11,7 +11,7 @@ const Hero = () => {
     const getSpan = (word) => {
         return word.split('').map((letter, index) => (
             <span
-                className='text-2xl md:text-8xl md:text-stroke-1 text-amber-300 md:text-fill-transparent'
+                className='text-3xl md:text-8xl md:text-stroke-1 text-amber-300 md:text-fill-transparent'
                 key={index}
             >
                 {letter}
