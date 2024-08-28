@@ -4,7 +4,7 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 import Email from '@mui/icons-material/Email';
 import WhatsApp from '@mui/icons-material/WhatsApp';
 import Phone from '@mui/icons-material/PhoneEnabled';
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Parallax } from 'react-parallax';
 import imageOverlay from '../../assets/earth.webp';
 import toast, { Toaster } from 'react-hot-toast';
