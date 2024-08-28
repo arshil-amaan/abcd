@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import ProjectCard from "../Projects/ProjectCard";
+import ProjectCard from "../UI/ProjectCard";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import styles from '../styles.module.css'
+
 
 export default (props) => {
     const [activeSlide, setactiveSlide] = useState(props.activeSlide);
@@ -58,11 +60,11 @@ export default (props) => {
     return (
         <>
             {/* carousel */}
-            <div className="slideC flex flex-col">
+            <div className={`${styles["slideC"]}flex flex-col w-screen justify-center items-center text-center h-[379px] mx-0 my-auto perspective-1000 transform-style-preserve-3d overflow-x-auto`}>
                 {props.data.map((item, i) => (
                     <React.Fragment key={item.id}>
                         <div
-                            className="slide w-[590px]"
+                            className={`${styles['slide']} flex items-center justify-center transition-all duration-500 absolute`}
                             style={{
                                 background: item.bgColor,
                                 boxShadow: `0 5px 20px ${item.bgColor}30`,
@@ -72,7 +74,7 @@ export default (props) => {
                             <SliderContent {...item} />
                         </div>
                         <div
-                            className="reflection"
+                            className={`absolute w-full h-16 -bottom-14 rounded-3xl rounded-bl-none rounded-br-none transition-all duration-500`}
                             style={{
                                 zIndex:-1,
                                 background: `linear-gradient(to bottom, ${item.bgColor}20, transparent)`,
@@ -86,11 +88,11 @@ export default (props) => {
 
             <div className="btns flex justify-between gap-8 pt-16">
                 <div
-                    className="btn"
+                className="cursor-pointer"
                     onClick={prev}
                 ><ArrowBackIosRoundedIcon style={{ fontSize: '40px' }} /></div>
                 <div
-                    className="btn"
+                className="cursor-pointer"
                     onClick={next}
                 ><ArrowForwardIosRoundedIcon style={{ fontSize: '40px' }} /></div>
             </div>
@@ -100,7 +102,7 @@ export default (props) => {
 
 const SliderContent = ({ projImg, description, title, ghLink, demoLink }) => {
     return (
-        <div className="sliderContent">
+        <div>
             <ProjectCard projImg={projImg} description={description} title={title} ghLink={ghLink} demoLink={demoLink} />
         </div>
     );

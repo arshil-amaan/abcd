@@ -17,6 +17,14 @@ export default {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to right, #22d3ee 97%, #fde68a 99.9%)',
       },
+      // Define custom perspective values
+      perspective: {
+        '1000': '1000px',
+      },
+      // Define custom transform-style values
+      transformStyle: {
+        'preserve-3d': 'preserve-3d',
+      },
     },
   },
   plugins: [
@@ -28,7 +36,13 @@ export default {
         '.text-fill-transparent': {
           '-webkit-text-fill-color': 'transparent',
         },
-      });
+        '.perspective-1000': {
+          perspective: '1000px',
+        },
+        '.transform-style-preserve-3d': {
+          transformStyle: 'preserve-3d',
+        },
+      }, ['responsive', 'hover']);
     },
   ],
-}
+};

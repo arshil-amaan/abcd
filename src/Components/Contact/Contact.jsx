@@ -19,7 +19,7 @@ const Contact = () => {
             <Toaster />
             <section
                 id='contact'
-                className='mx-auto flex bg-gray-100 rounded-lg shadow-lg justify-center flex-col lg:flex-row'
+                className='mx-auto flex bg-gray-100 rounded-lg shadow-lg justify-center flex-col md:flex-row'
             >
                 <Suspense fallback={<div>Loading...</div>}>
                     <ContactForm />

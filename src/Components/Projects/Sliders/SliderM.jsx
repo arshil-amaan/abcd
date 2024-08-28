@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-import Button from "./Button";
+import Button from "../UI/Button";
+import styles from '../styles.module.css'
+
 
 export default (props) => {
     const [activeSlide, setactiveSlide] = useState(props.activeSlide);
@@ -60,14 +62,13 @@ export default (props) => {
     return (
         <>
             {/* carousel */}
-            <div className="slideC md:hidden flex items-center justify-center flex-col w-[250px] h-[400px] m-0">
+            <div className={`${styles['slideC']} md:hidden flex items-center justify-center flex-col w-[250px] h-[400px] m-0`}>
                 {props.data.map((item, i) => (
                     <React.Fragment key={item.id}>
                         <div
-                            className="slide h-[430px] w-[110%]"
+                            className={`${styles['slide']} h-[430px] w-64 p-4 rounded-3xl transform transition-all duration-500 flex flex-col ease-out absolute`}
                             style={{
                                 background: item.bgColor,
-                                // boxShadow: `0 5px 20px ${item.bgColor}30`,
                                 ...getStyles(i)
                             }}
                         >
@@ -98,16 +99,14 @@ export default (props) => {
 
 const SliderContent = (props) => {
     return (
-        <div className="content">
-            <div style={{ boxShadow: `0 5px 20px ${props.bgColor}30` }} className="w-64 p-4 rounded-lg shadow-md transform transition-transform duration-300 ease-in-out">
-                <img className="w-full h-40 object-cover rounded-t-lg" alt="Card Image" src={props.projImg} />
-                <h2 className="text-xl mt-6 tracking-widest">{props.title}</h2>
-                <p className="text-white font-sans">{props.shortDescription}</p>
-                <div className="flex justify-around items-center mt-4">
-                    <Button to={'github'} goto={props.ghLink} />
-                    <Button to={'site'} goto={props.demoLink} />
-                </div>
+        <>
+            <img className="w-full h-40 object-cover rounded-t-lg" alt="Card Image" src={props.projImg} />
+            <h2 className="text-xl mt-6 tracking-widest">{props.title}</h2>
+            <p className="text-white font-sans">{props.shortDescription}</p>
+            <div className="flex justify-around items-center mt-4">
+                <Button to={'github'} goto={props.ghLink} />
+                <Button to={'site'} goto={props.demoLink} />
             </div>
-        </div>
+        </>
     )
 }

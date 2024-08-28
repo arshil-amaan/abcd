@@ -1,10 +1,11 @@
-import { memo } from 'react';
-import TextSnippet from '@mui/icons-material/TextSnippet';
-import GitHub from '@mui/icons-material/GitHub';
-import LinkedIn from '@mui/icons-material/LinkedIn';
-import Email from '@mui/icons-material/Email';
-import WhatsApp from '@mui/icons-material/WhatsApp';
-import Phone from '@mui/icons-material/PhoneEnabled';
+import { memo,lazy } from 'react';
+
+const TextSnippet = lazy(() => import('@mui/icons-material/TextSnippet'));
+const GitHub = lazy(() => import('@mui/icons-material/GitHub'));
+const LinkedIn = lazy(() => import('@mui/icons-material/LinkedIn'));
+const Email = lazy(() => import('@mui/icons-material/Email'));
+const WhatsApp = lazy(() => import('@mui/icons-material/WhatsApp'));
+const Phone = lazy(() => import('@mui/icons-material/PhoneEnabled'));
 
 const iconStyles = {
     fill: "rgb(31 41 55)",

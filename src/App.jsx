@@ -4,10 +4,10 @@ import Hero from './Components/Hero/Hero'
 import About from './Components/About/About'
 import Skills from './Components/Skills/Skills2'
 import Footer from './Components/Footer/Footer'
-import Projects2 from './Components/Projects2/Projects2'
+import Projects2 from './Components/Projects/Projects'
 import Contact from './Components/Contact/Contact'
 import axios from 'axios'
-import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
+import ToTheTop from '@mui/icons-material/PanToolAlt';
 const url = import.meta.env.VITE_URL;
 
 function App() {
@@ -94,7 +94,7 @@ function App() {
           active:shadow-none active:translate-y-1"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <PanToolAltIcon />
+          <ToTheTop />
         </button>
       )}
     </div>
