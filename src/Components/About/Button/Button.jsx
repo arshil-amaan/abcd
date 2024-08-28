@@ -3,7 +3,7 @@ import styles from './Button.module.css'
 
 const Button = () => {
   return (
-    <a href='https://drive.google.com/file/d/17fLiTcqC--qkLwgYCn5rpbskWh6ABBnP/view?usp=drive_link' target='_blank' className={styles.button}>
+    <a href='https://drive.google.com/file/d/17fLiTcqC--qkLwgYCn5rpbskWh6ABBnP/view?usp=drive_link' target='_blank' className={`${styles.button} border-amber-400 border-[3px]`}>
       Hire me
       <div className={styles["star-1"]}>
         <svg

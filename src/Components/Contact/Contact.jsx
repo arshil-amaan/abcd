@@ -16,7 +16,6 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    console.log(url)
     const submitHandler = async (e) => {
         e.preventDefault();
 
