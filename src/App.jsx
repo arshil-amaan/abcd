@@ -8,10 +8,10 @@ const url = import.meta.env.VITE_URL;
 
 const Hero = lazy(() => import('./Components/Hero/Hero'));
 const About = lazy(() => import('./Components/About/About'));
-const Skills = lazy(() => import('./Components/Skills/Skills2'));
-const Footer = lazy(() => import('./Components/Footer/Footer'));
-const Projects2 = lazy(() => import('./Components/Projects/Projects'));
+const Skills = lazy(() => import('./Components/Skills/Skills'));
+const Projects = lazy(() => import('./Components/Projects/Projects'));
 const Contact = lazy(() => import('./Components/Contact/Contact'));
+const Footer = lazy(() => import('./Components/Footer/Footer'));
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
@@ -88,7 +88,7 @@ const App = () => {
         <Hero />
         <About />
         <Skills />
-        <Projects2 />
+        <Projects />
         <Contact />
         <Footer />
       </Suspense>
