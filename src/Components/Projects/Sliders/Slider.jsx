@@ -61,7 +61,7 @@ export default (props) => {
             {/* carousel */}
             <div id="carousel-window" className={`w-[569px] h-80 mx-0 my-auto perspective-1000 transform-style-preserve-3d rounded-3xl relative`}>
                 {props.data.map((item, i) => (
-                    <React.Fragment style={{backgroundColor:"red"}} key={item.id}>
+                    <React.Fragment key={item.id}>
                         <div id="single-carousel-element"
                             className={`flex h-full w-full items-center justify-center transition-all duration-500 absolute rounded-3xl`}
                             style={{

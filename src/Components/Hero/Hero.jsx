@@ -1,13 +1,13 @@
+import React, { useMemo, Suspense, lazy } from 'react';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import React from 'react'
-import { ReactNebula } from "@flodlc/nebula";
-import { Fade, Slide } from "react-awesome-reveal";
 
+const ReactNebula = lazy(() => import('@flodlc/nebula').then(module => ({ default: module.ReactNebula })));
+const LazyFade = lazy(() => import('react-awesome-reveal').then(module => ({ default: module.Fade })));
+const LazySlide = lazy(() => import('react-awesome-reveal').then(module => ({ default: module.Slide })));
 const Hero = () => {
-
     const word1 = "Brilliant";
     const word2 = "Solutions";
-    
+
     const getSpan = (word) => {
         return word.split('').map((letter, index) => (
             <span
@@ -19,11 +19,11 @@ const Hero = () => {
         ));
     };
 
-    const spans1 = getSpan(word1);
-    const spans2 = getSpan(word2);
+    const spans1 = useMemo(() => getSpan(word1), [word1]);
+    const spans2 = useMemo(() => getSpan(word2), [word2]);
 
     return (
-        <>
+        <Suspense fallback={<div>Loading...</div>}>
             <div className='h-dvh flex justify-center flex-col items-center' id='hero-section'>
                 <ReactNebula config={{
                     starsCount: 680,
@@ -40,34 +40,31 @@ const Hero = () => {
                 <div className='flex flex-col justify-center items-center z-10'>
                     <div className='md:mb-10 font-bold text-xl md:text-6xl'>
                         <div className='flex justify-center'>
-                            <Slide triggerOnce={true} className='text-2xl md:text-6xl mb-9'>
+                            <LazySlide triggerOnce={true} className='text-2xl md:text-6xl mb-9'>
                                 <p>From&nbsp;</p>
-                            </Slide>
+                            </LazySlide>
 
-                            <Fade triggerOnce={true} delay={1e3} cascade damping={2e-1} className='mb-9 inline '>
-                                <span className='text-2xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent' >ZEROS</span>
-
+                            <LazyFade triggerOnce={true} delay={1000} cascade damping={0.2} className='mb-9 inline'>
+                                <span className='text-2xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent'>ZEROS</span>
                                 <span className='text-2xl md:text-6xl'>&nbsp;and&nbsp;</span>
-
                                 <span className='text-2xl md:text-7xl font-codic md:text-stroke-1 text-amber-300 md:text-fill-transparent'>ONES</span>
-                            </Fade>
+                            </LazyFade>
                         </div>
                         <div className='flex'>
-                            <Slide triggerOnce={true} className='mb-9 text-2xl md:text-6xl'>
+                            <LazySlide triggerOnce={true} className='mb-9 text-2xl md:text-6xl'>
                                 <p>To&nbsp;</p>
-                            </Slide>
-                            <Fade triggerOnce={true} delay={2e3} cascade damping={1e-1} className='mb-9 inline font-extrabold font-beauty'>
+                            </LazySlide>
+                            <LazyFade triggerOnce={true} delay={2000} cascade damping={0.1} className='mb-9 inline font-extrabold font-beauty'>
                                 {spans1}
-                            </Fade>&nbsp;
-                            <Fade triggerOnce={true} delay={2.9e3} cascade damping={1e-1} className='mb-9 inline  font-beauty'>
+                            </LazyFade>&nbsp;
+                            <LazyFade triggerOnce={true} delay={2900} cascade damping={0.1} className='mb-9 inline font-beauty'>
                                 {spans2}
-                            </Fade>
+                            </LazyFade>
                         </div>
                     </div>
 
-                    <Fade delay={4e3} triggerOnce={true}>
+                    <LazyFade delay={4000} triggerOnce={true}>
                         <div className="hero-links flex leading-loose">
-
                             <a
                                 href='#about-section'
                                 className='text-xl md:text-2xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
@@ -81,14 +78,16 @@ const Hero = () => {
                                 Projects
                             </a>
                         </div>
-                    </Fade>
+                    </LazyFade>
                 </div>
-                <Fade delay={4e3} triggerOnce={true} className='flex justify-center'>
-                    <a href='#about-section' className='absolute bottom-3 chevron z-10 animate-bounce'><ExpandMore fontSize='large' /></a>
-                </Fade>
+                <LazyFade delay={4000} triggerOnce={true} className='flex justify-center'>
+                    <a href='#about-section' className='absolute bottom-3 chevron z-10 animate-bounce'>
+                        <ExpandMore fontSize='large' />
+                    </a>
+                </LazyFade>
             </div>
-        </>
-    )
+        </Suspense>
+    );
 }
 
 export default Hero;
