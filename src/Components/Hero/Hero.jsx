@@ -23,8 +23,7 @@ const Hero = () => {
     const spans2 = useMemo(() => getSpan(word2), [word2]);
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <div className='h-dvh flex justify-center flex-col items-center' id='hero-section'>
+        <div className='h-dvh flex justify-center flex-col items-center' id='hero-section'>
                 <ReactNebula config={{
                     starsCount: 680,
                     starsColor: "#FFF",
@@ -86,7 +85,6 @@ const Hero = () => {
                     </a>
                 </LazyFade>
             </div>
-        </Suspense>
     );
 }
 
