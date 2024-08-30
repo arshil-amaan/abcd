@@ -16,7 +16,7 @@ const iconStyles = {
 
 const GetInTouch = memo(() => {
     return (
-        <div className='w-full md:w-1/2 text-slate-700 pt-6 p-5 md:p-10'>
+        <div className='w-full md:w-1/2 text-slate-800 pt-6 p-5 md:p-10'>
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">Get in Touch</h2>
             <p className='text-gray-800 text-xl mb-6 md:my-12'>
                 Whether you want to get in touch, talk about a project collaboration, or just say hi, I'd love to hear from you.

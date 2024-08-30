@@ -6,6 +6,30 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-clockwise-1': 'spin-clockwise-1 10s linear infinite',  // Clockwise spin
+        'spin-counterclockwise-1': 'spin-counterclockwise-1 10s linear infinite', // Counterclockwise spin
+        'spin-clockwise-2': 'spin-clockwise-2 10s linear infinite',  // Second clockwise spin
+        'spin-counterclockwise-2': 'spin-counterclockwise-2 10s linear infinite', // Second counterclockwise spin
+      },
+      keyframes: {
+        'spin-clockwise-1': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'spin-counterclockwise-1': {
+          from: { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(0deg)' },
+        },
+        'spin-clockwise-2': {
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        'spin-counterclockwise-2': {
+          from: { transform: 'rotate(360deg)' },
+          to: { transform: 'rotate(0deg)' },
+        },
+      },
       textColor: {
         'transparent': 'transparent',
       },
@@ -15,7 +39,7 @@ export default {
         defall: ['defall', 'sans-serif'],
       },
       backgroundImage: {
-        'about-gradient': 'linear-gradient(to right, #22d3ee 97%, #fde68a 99.9%)',
+        'about-gradient': 'linear-gradient(to right, #22d3ee 97%, #fde68a 100%)',
       },
       backgroundColor: {
         'translucent': 'rgba(0,0,0,0.7)',

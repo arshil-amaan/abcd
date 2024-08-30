@@ -48,7 +48,7 @@ const ContactForm = () => {
     }, [name, email, message]);
 
     return (
-        <div className='w-full md:w-1/2 text-slate-700 pt-6 p-5 md:p-10'>
+        <div className='w-full md:w-1/2 text-slate-800 pt-6 p-5 md:p-10'>
             <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">Contact Me</h2>
             <form onSubmit={submitHandler}>
                 <div className="mb-4 text-xl">

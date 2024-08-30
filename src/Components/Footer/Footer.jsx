@@ -1,11 +1,27 @@
 import { memo, Suspense } from 'react';
-import FooterPic from '../../assets/footer.webp';
+import footerMd from '../../assets/images/mdImages/footerMd.webp'
+import footerSm from '../../assets/images/smImages/footerSm.webp'
 
 const Footer = () => {
   return (
     <footer className="footer-section flex items-center justify-center flex-col text-center footer-center p-5 bg-amber-200 text-amber-900">
       <Suspense fallback={<div className='w-20 h-20 bg-gray-200 rounded-full' />}>
-        <img src={FooterPic} alt="Footer" className="rounded-full w-20" loading="lazy" />
+      <picture>
+    <source
+        media="(max-width: 767px)"
+        srcSet={footerSm}
+    />
+    <source
+        media="(min-width: 768px)"
+        srcSet={footerMd}
+    />
+    <img
+        src={footerMd} // Fallback image
+        alt="Footer"
+        className="rounded-full w-20"
+        loading="lazy"
+    />
+</picture>
       </Suspense>
       <p className="font-bold leading-loose text-xl">Made with ❤️ by Arshil</p>
       <p className="leading-loose flex flex-col md:inline text-lg">

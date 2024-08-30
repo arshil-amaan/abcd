@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
-import Button from "../UI/Button";
+import Button from "../Button";
 
 
 export default (props) => {

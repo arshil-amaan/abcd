@@ -23,7 +23,7 @@ const Hero = () => {
     const spans2 = useMemo(() => getSpan(word2), [word2]);
 
     return (
-        <div className='h-dvh flex justify-center flex-col items-center' id='hero-section'>
+        <div className='h-screen flex justify-center flex-col items-center' id='hero-section'>
                 <ReactNebula config={{
                     starsCount: 680,
                     starsColor: "#FFF",
@@ -68,13 +68,19 @@ const Hero = () => {
                                 href='#about-section'
                                 className='text-xl md:text-2xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
                             >
-                                About
+                                About Me
                             </a>
                             <a
                                 href='#projects-section'
                                 className='text-xl md:text-2xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
                             >
                                 Projects
+                            </a>
+                            <a
+                                href='#contact'
+                                className='text-xl md:text-2xl font-semibold mx-5 pb-1 bg-gradient-to-r from-amber-500 to-amber-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-500 ease-out'
+                            >
+                                Get In Touch
                             </a>
                         </div>
                     </LazyFade>

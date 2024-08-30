@@ -1,17 +1,21 @@
-import React, { useState } from "react";
-import ProjectCard from "../UI/ProjectCard";
+import React, { useState, useCallback, useMemo } from "react";
+import ProjectCard from "../ProjectCard";
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import debounce from 'lodash.debounce';
 
+const Carousel = React.memo((props) => {
+    const [activeSlide, setActiveSlide] = useState(props.activeSlide);
 
-export default (props) => {
-    const [activeSlide, setactiveSlide] = useState(props.activeSlide);
+    const next = useCallback(debounce(() => {
+        setActiveSlide(prev => Math.min(prev + 1, props.data.length - 1));
+    }, 300), [props.data.length]);
 
-    const next = () => activeSlide < props.data.length - 1 && setactiveSlide(activeSlide + 1);
+    const prev = useCallback(debounce(() => {
+        setActiveSlide(prev => Math.max(prev - 1, 0));
+    }, 300), []);
 
-    const prev = () => activeSlide > 0 && setactiveSlide(activeSlide - 1);
-
-    const getStyles = (index) => {
+    const getStyles = useCallback((index) => {
         if (activeSlide === index)
             return {
                 opacity: 1,
@@ -54,7 +58,7 @@ export default (props) => {
                 transform: "translateX(480px) translateZ(-500px) rotateY(-35deg)",
                 zIndex: 7
             };
-    };
+    }, [activeSlide]);
 
     return (
         <>
@@ -66,7 +70,6 @@ export default (props) => {
                             className={`flex h-full w-full items-center justify-center transition-all duration-500 absolute rounded-3xl`}
                             style={{
                                 background: item.bgColor,
-                                // boxShadow: `0 5px 20px ${item.bgColor}30`,
                                 ...getStyles(i)
                             }}
                         >
@@ -75,7 +78,7 @@ export default (props) => {
                         <div
                             className={`absolute w-full h-16 -bottom-14 rounded-3xl rounded-bl-none rounded-br-none transition-all duration-500`}
                             style={{
-                                zIndex:-1,
+                                zIndex: -1,
                                 background: `linear-gradient(to bottom, ${item.bgColor}20, transparent)`,
                                 ...getStyles(i)
                             }}
@@ -87,14 +90,20 @@ export default (props) => {
 
             <div className="btns flex justify-between gap-8 pt-16">
                 <div
-                className="cursor-pointer"
+                    className="cursor-pointer"
                     onClick={prev}
-                ><ArrowBackIosRoundedIcon style={{ fontSize: '40px' }} /></div>
+                >
+                    <ArrowBackIosRoundedIcon style={{ fontSize: '40px' }} />
+                </div>
                 <div
-                className="cursor-pointer"
+                    className="cursor-pointer"
                     onClick={next}
-                ><ArrowForwardIosRoundedIcon style={{ fontSize: '40px' }} /></div>
+                >
+                    <ArrowForwardIosRoundedIcon style={{ fontSize: '40px' }} />
+                </div>
             </div>
         </>
     );
-};
+});
+
+export default Carousel;

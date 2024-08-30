@@ -1,18 +1,29 @@
-import proj1 from '../../assets/projects/Events-router.webp';
-import proj2 from '../../assets/projects/Hunger-Menu.webp';
-import proj3 from '../../assets/projects/Tucasa.webp';
-import proj4 from '../../assets/projects/My-Portfolio.webp';
-import proj5 from '../../assets/projects/Expense-Tracker.webp';
-import proj6 from '../../assets/projects/Business-Website.webp';
-import proj7 from '../../assets/projects/News-Blog.webp';
-import proj8 from '../../assets/projects/weather.webp';
-import proj9 from '../../assets/projects/College-Website.webp';
+import proj1Md from '../../assets/images/mdImages/projects/Events-router.webp';
+import proj2Md from '../../assets/images/mdImages/projects/Hunger-Menu.webp';
+import proj3Md from '../../assets/images/mdImages/projects/Tucasa.webp';
+import proj4Md from '../../assets/images/mdImages/projects/My-Portfolio.webp';
+import proj5Md from '../../assets/images/mdImages/projects/Expense-Tracker.webp';
+import proj6Md from '../../assets/images/mdImages/projects/Business-Website.webp';
+import proj7Md from '../../assets/images/mdImages/projects/News-Blog.webp';
+import proj8Md from '../../assets/images/mdImages/projects/weather.webp';
+import proj9Md from '../../assets/images/mdImages/projects/College-Website.webp';
+
+import proj1Sm from '../../assets/images/smImages/projects/Events-router.webp';
+import proj2Sm from '../../assets/images/smImages/projects/Hunger-Menu.webp';
+import proj3Sm from '../../assets/images/smImages/projects/Tucasa.webp';
+import proj4Sm from '../../assets/images/smImages/projects/My-Portfolio.webp';
+import proj5Sm from '../../assets/images/smImages/projects/Expense-Tracker.webp';
+import proj6Sm from '../../assets/images/smImages/projects/Business-Website.webp';
+import proj7Sm from '../../assets/images/smImages/projects/News-Blog.webp';
+import proj8Sm from '../../assets/images/smImages/projects/weather.webp';
+import proj9Sm from '../../assets/images/smImages/projects/College-Website.webp';
 
 export default [
   {
     id: 0,
     bgColor: "#c59e4d",
-    projImg: proj1,
+    projImg: proj1Md,
+    projImgSm: proj1Sm,
     title: "Events Router",
     description:
       "A dynamic event discovery application that connects users with exciting local happenings. The backend, powered by Express.js, ensures seamless API interactions to deliver real-time event data. The React.js frontend features engaging UI/UX elements, showcasing dynamic event listings and comprehensive event views. Prioritizes user security with secure registration and login systems, enabling collaborative event contributions and dynamic event management.",
@@ -24,7 +35,8 @@ export default [
   {
     id: 1,
     bgColor: "#c93d07",
-    projImg: proj2,
+    projImg: proj2Md,
+    projImgSm: proj2Sm,
     title: "Hunger Menu",
     description:
       "A modern food ordering app powered by Firebase Realtime Database. Features a user-friendly interface allowing customers to browse menus in real-time and place orders effortlessly. Intuitive order management includes interactive quantity adjustment buttons and a streamlined checkout process. With a focus on responsive design and form validation, Hunger Menu offers a seamless and enjoyable food ordering experience.",
@@ -36,7 +48,8 @@ export default [
   {
     id: 2,
     bgColor: "#6c3b84",
-    projImg: proj3,
+    projImg: proj3Md,
+    projImgSm: proj3Sm,
     title: "TuCasa",
     description:
       "A premier luxury property rental platform designed to showcase a stunning collection of exquisite properties available for rent. Crafted with Bootstrap, TuCasa delivers a fully responsive and visually captivating experience across all devices. Users can effortlessly explore a curated selection of high-end properties and select from three distinct, tailored price plans to match their preferences.",
@@ -48,7 +61,8 @@ export default [
   {
     id: 3,
     bgColor: "#4a77bd",
-    projImg: proj4,
+    projImg: proj4Md,
+    projImgSm: proj4Sm,
     title: "Personal Portfolio Website",
     description:
       "An elegantly crafted website built with Bootstrap and hosted on GitHub Pages. This interactive and visually striking platform showcases a compelling narrative of professional journey, work experience, education, projects, and achievements. Designed to leave a lasting impression, the site blends aesthetics with functionality to create a memorable web presence.",
@@ -60,7 +74,8 @@ export default [
   {
     id: 4,
     bgColor: "#8d6ecd",
-    projImg: proj5,
+    projImg: proj5Md,
+    projImgSm: proj5Sm,
     title: "Expense Tracker",
     description:
       "A powerful tool for managing personal finances, featuring real-time expense recording and interactive data visualization through dynamic bar graphs. Built with React.js and CSS modules, this customizable budgeting platform offers advanced filtering capabilities, enabling users to track and analyze spending habits effectively. With potential cost savings of up to 30%, the Expense Tracker ensures a seamless and user-friendly experience for effortless expense management.",
@@ -72,7 +87,8 @@ export default [
   {
     id: 5,
     bgColor: "#ccc94a",
-    projImg: proj6,
+    projImg: proj6Md,
+    projImgSm: proj6Sm,
     title: "Financial Consultancy Services Website",
     description:
       "A robust platform offering a full spectrum of financial services, including investment banking, portfolio management, tax optimization, and custodial services. Designed to provide expert guidance and personalized support, the website empowers users to navigate financial markets with confidence, optimize investments, manage tax obligations, and safeguard assets with ease.",
@@ -84,7 +100,8 @@ export default [
   {
     id: 6,
     bgColor: "#8B2323",
-    projImg: proj7,
+    projImg: proj7Md,
+    projImgSm: proj7Sm,
     title: "News Blog Website",
     description:
       "Stay up-to-date with our cutting-edge news blog, delivering timely, objective, and in-depth coverage on a wide array of topics. Rely on us for precise and captivating news content, featuring insightful articles, detailed reports, and rich multimedia elements. From global events and technological advancements to entertainment and beyond, our platform ensures you remain connected and informed across any device.",
@@ -96,19 +113,21 @@ export default [
   {
     id: 7,
     bgColor: "#4e82ff",
-    projImg: proj8,
+    projImg: proj8Md,
+    projImgSm: proj8Sm,
     title: "Feel It",
     description:
       "An innovative web application that provides accurate, real-time weather updates for any location using a powerful API. Perfect for trip planning, outdoor event preparations, or daily weather checks, 'Feel It' delivers up-to-the-minute weather insights with clarity and precision. Stay informed and make well-informed decisions with the latest weather data right at your fingertips.",
     shortDescription:
       "Get real-time, accurate weather updates for any location. Perfect for trip planning and outdoor events with precise data.",
     ghLink: "https://github.com/arshil-amaan/weather",
-    demoLink: "https://arshil-amaan.github.io/Blog-Grid"
+    demoLink: "https://arshil-amaan.github.io/weather"
   },
   {
     id: 8,
     bgColor: "#7ba57e",
-    projImg: proj9,
+    projImg: proj9Md,
+    projImgSm: proj9Sm,
     title: "College Website",
     description:
       "A meticulously crafted digital platform that highlights a premier technical institute's rich history and vibrant student community. The site integrates content presentation with interactive elements, offering an immersive exploration of the institution's legacy. Delve into the website to experience a cutting-edge showcase of academic excellence and community feedback.",

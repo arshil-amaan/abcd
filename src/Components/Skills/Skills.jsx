@@ -1,86 +1,39 @@
 import Marquee from "react-fast-marquee";
 import React, { useEffect, useState, useCallback, useMemo, lazy, Suspense } from 'react';
-import debounce from 'lodash.debounce';
+import allTechList from "../../assets/data/techList.js";
 
-const SkillCard = lazy(() => import('./SkillCard'));
+const SkillCard = lazy(() => import('../../assets/UI/Skills/SkillCard'));
 
 const Skills = () => {
-    const techList = useMemo(() => [
-        { tech: "html5", tooltip: "HTML5 structures and presents web content." },
-        { tech: "css3", tooltip: "CSS3 styles and layouts web pages." },
-        { tech: "javascript", tooltip: "JavaScript adds interactivity to web pages." },
-        { tech: "react", tooltip: "React builds user interfaces for web apps." },
-        { tech: "nextjs", tooltip: "Next.js is a React framework for SSR and SSG." },
-        { tech: "nodejs", tooltip: "Node.js runs JavaScript on the server." },
-        { tech: "nodemon", tooltip: "Nodemon restarts Node.js apps on changes." },
-        { tech: "express", tooltip: "Express is a Node.js web application framework." },
-        { tech: "python", tooltip: "Python is a versatile and readable programming language." },
-        { tech: "java", tooltip: "Java is a robust, platform-independent programming language." },
-        { tech: "typescript", tooltip: "TypeScript is JavaScript with static types." },
-        { tech: "git", tooltip: "Git tracks changes in source code." },
-        { tech: "mongodb", tooltip: "MongoDB is a NoSQL document-oriented database." },
-        { tech: "mongoose", tooltip: "Mongoose is an ODM for MongoDB in Node.js." },
-        { tech: "mysql", tooltip: "MySQL is an open-source relational database." },
-        { tech: "bootstrap", tooltip: "Bootstrap is a responsive front-end framework." },
-        { tech: "redux", tooltip: "Redux manages state in JavaScript apps." },
-        { tech: "bash", tooltip: "Bash is a Unix shell for command-line scripting." },
-        { tech: "linux", tooltip: "Linux is an open-source operating system kernel." }
-    ], []);
-
-    const techList2 = useMemo(() => [
-        { tech: "vscode", tooltip: "Visual Studio Code is a versatile code editor." },
-        { tech: "firebase", tooltip: "Firebase offers real-time databases and backend services." },
-        { tech: "materialui", tooltip: "Material-UI provides React components with Material Design." },
-        { tech: "tailwindcss", tooltip: "Tailwind CSS is a utility-first CSS framework." },
-        { tech: "npm", tooltip: "npm manages JavaScript packages and dependencies." },
-        { tech: "docker", tooltip: "Docker enables containerized applications." },
-        { tech: "netlify", tooltip: "Netlify automates web project deployment and hosting." },
-        { tech: "postman", tooltip: "Postman tests and interacts with APIs." },
-        { tech: "babel", tooltip: "Babel compiles modern JavaScript to compatible versions." },
-        { tech: "axios", tooltip: "Axios is a promise-based HTTP client for JavaScript." },
-        { tech: "jest", tooltip: "Jest is a JavaScript testing framework." },
-        { tech: "reactrouter", tooltip: "React Router handles routing in React apps." },
-        { tech: "vercel", tooltip: "Vercel optimizes frontend frameworks and static sites." },
-        { tech: "canva", tooltip: "Canva is a graphic design tool for creating visuals." },
-        { tech: "github", tooltip: "GitHub is a platform for version control with Git." },
-        { tech: "githubcodespaces", tooltip: "GitHub Codespaces provides a cloud-based development environment." },
-        { tech: "codepen", tooltip: "CodePen showcases HTML, CSS, and JavaScript code snippets." },
-        { tech: "vitejs", tooltip: "Vite is a fast build tool for modern web projects." },
-        { tech: "c", tooltip: "C is a powerful, low-level programming language." },
-        { tech: "cplusplus", tooltip: "C++ extends C with object-oriented features." }
-    ], []);
-
-    const [isMd, setIsMd] = useState(false);
-
-    const handleResize = useCallback(debounce(() => {
-        setIsMd(window.innerWidth >= 768);
-    }, 200), []);
-
-    useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, [handleResize]);
-
-    const marqueeStyles = useMemo(() => isMd ? {
-        WebkitMaskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 98%)",
-        maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 98%)"
-    } : {
+    const marqueeStyles = useMemo(() => ({
         WebkitMaskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%)",
         maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%)"
-    }, [isMd]);
+    }), []
+    );
+
+    const midIndex = Math.ceil(allTechList.length / 2);
+    const techList = allTechList.slice(0, midIndex);
+    const techList2 = allTechList.slice(midIndex);
 
     return (
-        <section id='skills-section' className='flex flex-col justify-center items-center p-12'>
-            <h2 className='text-3xl md:text-5xl font-bold text-center '>Tech Stack</h2>
+        <section id='skills-section' className='flex flex-col justify-center items-center bg-amber-200'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+                <path
+                    className="fill-cyan-400"
+                    fillOpacity="1"
+                    d="M0,288L26.7,288C53.3,288,107,288,160,288C213.3,288,267,288,320,266.7C373.3,245,427,203,480,202.7C533.3,203,587,245,640,240C693.3,235,747,181,800,181.3C853.3,181,907,235,960,234.7C1013.3,235,1067,181,1120,170.7C1173.3,160,1227,192,1280,213.3C1333.3,235,1387,245,1413,250.7L1440,256L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"
+                ></path>
+            </svg>
+            <h2 className='text-3xl md:text-5xl font-bold text-center text-slate-800'>Tech Stack</h2>
             <Suspense fallback={<div>Loading skills...</div>}>
-                <Marquee speed={60} direction="" className=" pt-24" pauseOnHover style={marqueeStyles}>
-                    {techList.map((tech, key) => <SkillCard key={key} tech={tech.tech} tooltip={tech.tooltip} />)}
+                <Marquee speed={60} direction="" className=" pt-24" pauseOnHover style={marqueeStyles} >
+                        {techList.map((tech, key) => <SkillCard key={key} tech={tech.tech} tooltip={tech.tooltip} />)}
                 </Marquee>
                 <Marquee speed={60} className="pt-20" pauseOnHover style={marqueeStyles}>
                     {techList2.map((tech, key) => <SkillCard key={key} tech={tech.tech} tooltip={tech.tooltip} />)}
                 </Marquee>
             </Suspense>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path className="fill-cyan-400" fillOpacity="1" d="M0,128L26.7,160C53.3,192,107,256,160,261.3C213.3,267,267,213,320,160C373.3,107,427,53,480,74.7C533.3,96,587,192,640,218.7C693.3,245,747,203,800,186.7C853.3,171,907,181,960,165.3C1013.3,149,1067,107,1120,117.3C1173.3,128,1227,192,1280,218.7C1333.3,245,1387,235,1413,229.3L1440,224L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>
         </section>
     );
 };
