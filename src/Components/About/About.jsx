@@ -9,13 +9,8 @@ const Button = lazy(() => import('../../assets/UI/About/Button'));
 
 
 const About = () => {
-    const introText = useMemo(() => ("ons that not only work but wow. Whether it’s a Firebase-powered food app that knows what you crave before you do or an event discovery platform that puts the spotlight on your next big night out, I bring a mix of creativity, technical expertise, and a sprinkle of humor to every project. My mission? To transform complex problems into intuitive, user-friendly solutions—and maybe have a bit of fun along the way. After all, who says coding can’t be a blast? When I'm not immersed in code, I'm busy mentoring future tech wizards, leading workshops, or perhaps trying to beat my own record on LeetCode. Ready to join me on this digital journey? Let’s create something extraordinary together!"), [])
     const [isMd, setIsMd] = useState(false);
 
-    const [isExpanded, setIsExpanded] = useState(false);
-    const handleReadMore = () => {
-        setIsExpanded(prevState => !prevState);
-    }
     const handleResize = useCallback(debounce(() => {
         setIsMd(window.innerWidth >= 768);
     }, 200), []);
@@ -45,16 +40,10 @@ const About = () => {
                     </Suspense>
                 </h2>
 
-                <div className='text-justify md:text-left md:leading-9 text-lg md:text-xl mt-10 mb-10 md:mb-20 md:font-semibold md:border-l-4 md:border-amber-400 md:pl-6 rounded-xl'>
+                <div className='text-justify md:text-left md:leading-9 h-fit transition-transform duration-300 text-lg md:text-2xl mt-10 mb-10 md:mb-20 md:font-semibold md:border-l-4 md:border-amber-400 md:pl-6 rounded-xl'>
                     I'm <Suspense fallback={<span className="animate-pulse">Arshil Amaan Ansari</span>}>
                         <AttentionSeeker className='border-b-4 drop-shadow-2xl border-b-slate-800 md:border-b-amber-400 rounded-lg inline-block font-bold text-2xl md:text-5xl md:text-amber-400 font-beauty'>Arshil Amaan Ansari</AttentionSeeker>
-                    </Suspense>, your friendly neighborhood Full Stack Developer based in the bustling city of Lucknow, India. When I'm not busy unraveling the mysteries of Data Structures or optimizing code to shave off milliseconds, you'll find me crafting seamless digital experiences that blend sleek front-end designs with rock-solid back-end wizardry. From turning lines of JavaScript into interactive delights to engineering systems with SQL, React.js, and Docker that could make a robot blush, I'm all about creating soluti
-
-                    {introText.substring(0, isExpanded ? introText.length : 0)}
-
-                    <span onClick={handleReadMore} className='drop-shadow-2xl cursor-pointer underline'>
-                        {isExpanded ? ' Read Less' : '...Read More'}
-                    </span>
+                    </Suspense>, a Full Stack Developer based in Lucknow, India. With a deep expertise in React.js, JavaScript, and backend technologies like SQL and Docker, I've engineered robust solutions that bridge dynamic front-end experiences with powerful backend systems. From crafting sleek, responsive interfaces to architecting scalable enterprise systems, I ensure that every layer of the tech stack—from pixel-perfect UI components to seamless API integrations—works in harmony. Whether it's developing real-time applications with Firebase or refining user interactions with CSS and Redux, I'm passionate about delivering end-to-end solutions that are not just functional but intuitive and engaging.
                 </div>
                 <div className='justify-center md:justify-start md:ml-6 relative flex'>
                     <Suspense fallback={<button>Hire Me</button>}>
@@ -79,8 +68,9 @@ const About = () => {
                             srcSet={myImgMd}
                         />
                         <img
-                            data-aos="slide-up"
+                            data-aos="fade-up"
                             data-aos-anchor-placement="top-bottom"
+                            data-aos-duration="1000"
                             className="object-contain h-full"
                             loading="lazy"
                             style={{
