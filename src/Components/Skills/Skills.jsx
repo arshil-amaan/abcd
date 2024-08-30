@@ -16,7 +16,7 @@ const Skills = () => {
     const techList2 = allTechList.slice(midIndex);
 
     return (
-        <section id='skills-section' className='flex flex-col justify-center items-center bg-amber-200'>
+        <section id='skills-section' className='relative flex flex-col justify-center items-center bg-amber-200'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto relative -top-3">
                 <path
                     className="fill-cyan-400"
