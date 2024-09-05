@@ -32,7 +32,7 @@ import ReactRouterIcon from '../svgs/Reactrouter';
 import VercelIcon from '../svgs/Vercel';
 import CanvaIcon from '../svgs/Canva';
 import GitHubIcon from '../svgs/Github';
-import GitHubCodespacesIcon from '../svgs/Githubcodespaces';
+import GitHubCodespacesIcon from '../svgs/GitHubcodespaces';
 import CodePenIcon from '../svgs/Codepen';
 import ViteJSIcon from '../svgs/Vitejs';
 import CIcon from '../svgs/C';
