@@ -23,7 +23,7 @@ const Skills = () => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto relative -top-3">
             <defs>
                     <filter id="shadow">
-                        <feDropShadow dx="0" dy="2" stdDeviation="20" flood-color="rgb(0, 0, 0)" />
+                        <feDropShadow dx="0" dy="2" stdDeviation="10" flood-color="rgb(0, 0, 0)" />
                     </filter>
                 </defs>
                 <path
@@ -39,7 +39,7 @@ const Skills = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="fill-cyan-400 absolute md:relative -bottom-3" viewBox="0 0 1440 320">
                 <defs>
                     <filter id="shadow">
-                        <feDropShadow dx="0" dy="-2" stdDeviation="20" flood-color="rgb(0, 0, 0)" />
+                        <feDropShadow dx="0" dy="-2" stdDeviation="10" flood-color="rgb(0, 0, 0)" />
                     </filter>
                 </defs>
                 <path fillOpacity="1" d="M0,128L26.7,160C53.3,192,107,256,160,261.3C213.3,267,267,213,320,160C373.3,107,427,53,480,74.7C533.3,96,587,192,640,218.7C693.3,245,747,203,800,186.7C853.3,171,907,181,960,165.3C1013.3,149,1067,107,1120,117.3C1173.3,128,1227,192,1280,218.7C1333.3,245,1387,235,1413,229.3L1440,224L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z" filter="url(#shadow)"></path>
