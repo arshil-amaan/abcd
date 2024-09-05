@@ -1,19 +1,22 @@
-import Marquee from "react-fast-marquee";
-import React, { useEffect, useState, useCallback, useMemo, lazy, Suspense } from 'react';
-import allTechList from "../../assets/data/techList.js";
-
-const SkillCard = lazy(() => import('../../assets/UI/Skills/SkillCard'));
+import debounce from 'lodash.debounce';
+import React, { useState, useCallback, useEffect } from 'react';
+import DesktopSkills from "../../assets/UI/Skills/DesktopSkills";
+import MobileSkills from "../../assets/UI/Skills/MobileSkills";
 
 const Skills = () => {
-    const marqueeStyles = useMemo(() => ({
-        WebkitMaskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%)",
-        maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%)"
-    }), []
-    );
+    const [isMd, setIsMd] = useState(false);
 
-    const midIndex = Math.ceil(allTechList.length / 2);
-    const techList = allTechList.slice(0, midIndex);
-    const techList2 = allTechList.slice(midIndex);
+    const handleResize = useCallback(debounce(() => {
+        setIsMd(window.innerWidth >= 768);
+    }, 200), []);
+
+    useEffect(() => {
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [handleResize]);
+    
+
 
     return (
         <section id='skills-section' className='relative flex flex-col justify-center items-center bg-amber-200'>
@@ -25,14 +28,9 @@ const Skills = () => {
                 ></path>
             </svg>
             <h2 className='text-3xl md:text-5xl font-bold text-center text-slate-800'>Tech Stack</h2>
-            <Suspense fallback={<div>Loading skills...</div>}>
-                <Marquee speed={60} direction="" className=" pt-24" pauseOnHover style={marqueeStyles} >
-                        {techList.map((tech, key) => <SkillCard key={key} tech={tech.tech} tooltip={tech.tooltip} />)}
-                </Marquee>
-                <Marquee speed={60} className="pt-20" pauseOnHover style={marqueeStyles}>
-                    {techList2.map((tech, key) => <SkillCard key={key} tech={tech.tech} tooltip={tech.tooltip} />)}
-                </Marquee>
-            </Suspense>
+<DesktopSkills/>
+            {/* {isMd ? <DesktopSkills/> : <MobileSkills />} */}
+            
             <svg xmlns="http://www.w3.org/2000/svg" className="fill-cyan-400 relative -bottom-3" viewBox="0 0 1440 320"><path fillOpacity="1" d="M0,128L26.7,160C53.3,192,107,256,160,261.3C213.3,267,267,213,320,160C373.3,107,427,53,480,74.7C533.3,96,587,192,640,218.7C693.3,245,747,203,800,186.7C853.3,171,907,181,960,165.3C1013.3,149,1067,107,1120,117.3C1173.3,128,1227,192,1280,218.7C1333.3,245,1387,235,1413,229.3L1440,224L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>
         </section>
     );
