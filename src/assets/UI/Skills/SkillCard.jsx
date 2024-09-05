@@ -10,7 +10,7 @@ const SkillCard = ({ list, direction="right" }) => {
 
   return (
     <div className="w-full">
-      <Suspense fallback={<div>Loading skills...</div>}>
+      <Suspense fallback={<div className="text-center">Loading skills...</div>}>
         <Marquee speed={60} direction={direction} className="pt-12" pauseOnHover style={marqueeStyles} >
           {list.map((item, key) => {
             const Icon = item.Icon;
