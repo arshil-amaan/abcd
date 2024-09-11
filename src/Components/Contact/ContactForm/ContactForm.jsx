@@ -18,21 +18,20 @@ const ContactForm = () => {
             return;
         }
         setIsLoading(true);
-        const date = new Date();
 
+        // Generate the timestamp
+        const date = new Date();
         const hours = String(date.getHours()).padStart(2, '0');
         const minutes = String(date.getMinutes()).padStart(2, '0');
         const seconds = String(date.getSeconds()).padStart(2, '0');
-
         const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const day = dayNames[date.getDay()];
-
         const dayOfMonth = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
-
         const timestamp = `${hours}:${minutes}:${seconds} ${day} ${dayOfMonth}/${month}/${year}`;
-        console.log(timestamp);
+
+        // Send the message via axios
         toast.promise(
             axios.post(url, {
                 data: [
@@ -49,7 +48,12 @@ const ContactForm = () => {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
-            }).then((response) => 'Message sent successfully.'),
+            }).then((response) => {
+                setName('');
+                setEmail('');
+                setMessage('');
+                return 'Message sent successfully.';
+            }),
             {
                 loading: 'Sending...',
                 success: <b>Message Sent</b>,
@@ -62,6 +66,7 @@ const ContactForm = () => {
             setIsLoading(false);
         });
     }, [name, email, message]);
+
 
     return (
         <div className='w-full md:w-1/2 text-slate-800 pt-6 p-5 md:p-10'>
