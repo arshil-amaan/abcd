@@ -35,7 +35,7 @@ const App = () => {
             `${url}/id/0`,
             {
               data: {
-                visitor_count: newVisitorCount,
+                visitor_count: newVisitorCount, //INCREMENT
               },
             },
             {

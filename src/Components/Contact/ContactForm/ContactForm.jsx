@@ -18,11 +18,27 @@ const ContactForm = () => {
             return;
         }
         setIsLoading(true);
+        const date = new Date();
+
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const day = dayNames[date.getDay()];
+
+        const dayOfMonth = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const year = date.getFullYear();
+
+        const timestamp = `${hours}:${minutes}:${seconds} ${day} ${dayOfMonth}/${month}/${year}`;
+        console.log(timestamp);
         toast.promise(
             axios.post(url, {
                 data: [
                     {
                         id: "INCREMENT",
+                        timestamp,
                         name,
                         email,
                         message,
