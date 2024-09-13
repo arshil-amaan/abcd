@@ -83,7 +83,7 @@ const App = () => {
   const randomFallbackMessage = useMemo(() => getRandomFallbackMessage(), []);
 
   return (
-    <div className="font-defall">
+    <div className="font-titillium">
       <Suspense fallback={<Fallback message={randomFallbackMessage} />}>
         <Hero />
         <About />

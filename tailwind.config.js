@@ -37,6 +37,7 @@ export default {
         codic: ['codic', 'monospace'],
         beauty: ['beauty', 'cursive'],
         defall: ['defall', 'sans-serif'],
+        titillium: ['"Titillium Web"', 'sans-serif'],
       },
       backgroundColor: {
         'translucent': 'rgba(0,0,0,0.7)',
